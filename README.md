@@ -1,98 +1,101 @@
-# 📘 **Syllabus complet – Cours PowerShell avec travaux pratiques**
+# 📘 **Syllabus Complet – PowerShell**
 
-## 🔹 **Introduction à PowerShell & commandes de base**
+---
 
-### 🧠 Contenu théorique :
-- Présentation de PowerShell et son positionnement
-- Différences entre CMD, Bash et PowerShell
+## 🔸 **PARTIE 1 – Bases de PowerShell**
+
+### 🧠 Contenu :
+- Présentation de PowerShell (historique, contextes d’usage)
 - PowerShell Core vs Windows PowerShell
-- Cmdlets, syntaxe de base, pipelines
+- Cmdlets : structure, nommage, principe de verb-noun
+- Pipelines et traitement séquentiel
 - Aide intégrée (`Get-Help`, `Get-Command`, `Get-Member`)
-- Variables, types de données, opérateurs
-- Formatage et redirection (table, liste, CSV, JSON)
+- Variables, types de données, opérateurs logiques et arithmétiques
+- Redirection et formats d’affichage (table, liste, CSV, JSON)
 
-### 💻 Travaux pratiques :
-- Utiliser `Get-Help` et `Get-Command` pour documenter des cmdlets
-- Manipuler des variables et afficher leurs types
-- Lister les processus/services avec filtrage (`Where-Object`)
-- Exporter des résultats dans différents formats (CSV, JSON)
-
----
-
-## 🔹 **Structures de contrôle & gestion de fichiers**
-
-### 🧠 Contenu théorique :
-- Structures conditionnelles : `if`, `elseif`, `else`, `switch`
-- Boucles : `for`, `foreach`, `while`, `do`
-- Fonctions, paramètres, blocs `begin`, `process`, `end`
-- Gestion des erreurs avec `try`, `catch`, `finally`
-- Parcourir l’arborescence d’un système de fichiers
-- Manipulation des dates, chaînes de caractères, expressions régulières
-
-### 💻 Travaux pratiques :
-- Créer un script qui classe les fichiers d’un dossier selon leur extension
-- Écrire un script de sauvegarde basé sur la date et taille des fichiers
-- Implémenter des fonctions réutilisables avec gestion des erreurs
+### 💻 TP :
+- Explorer l’aide PowerShell et documenter des cmdlets
+- Créer et manipuler des variables typées
+- Lister les processus actifs avec filtrage, tri et export CSV
 
 ---
 
-## 🔹 **Gestion des processus, services, utilisateurs et tâches planifiées**
+## 🔸 **PARTIE 2 – Structures de contrôle & gestion des fichiers**
 
-### 🧠 Contenu théorique :
-- Gérer les processus (`Get/Start/Stop-Process`)
-- Gérer les services Windows (`Get/Start/Restart/Stop-Service`)
-- Lire et écrire dans le registre Windows
-- Créer, modifier, supprimer des comptes utilisateurs locaux
-- Créer et gérer des tâches planifiées (`schtasks`, `ScheduledTasks`)
+### 🧠 Contenu :
+- Structures conditionnelles (`if`, `switch`)
+- Boucles (`for`, `foreach`, `while`, `do`)
+- Fonctions et paramètres (`param()`)
+- Gestion des erreurs : `try`, `catch`, `finally`
+- Parcours de répertoires, gestion de fichiers
+- Manipulation des chaînes, dates, et expressions régulières
 
-### 💻 Travaux pratiques :
-- Script de surveillance et redémarrage automatique de processus critiques
-- Auditer et documenter tous les services actifs
-- Script de création automatisée d’utilisateurs avec mot de passe complexe
-- Planifier un nettoyage automatique du disque avec `schtasks`
-
----
-
-## 🔹 **Scripting avancé & sécurité**
-
-### 🧠 Contenu théorique :
-- Définir des paramètres avec contraintes (`param()`, `ValidateSet`, etc.)
-- Organisation en modules (`.psm1`, `Import-Module`)
-- Signature numérique des scripts
-- Politiques d’exécution (`Get/Set-ExecutionPolicy`)
-- Gestion sécurisée des identifiants (`SecureString`, `PSCredential`)
-- Journalisation, historique, logs personnalisés
-
-### 💻 Travaux pratiques :
-- Créer un module contenant plusieurs fonctions métiers
-- Signer un script avec un certificat auto-généré
-- Script de connexion à distance sécurisé (PowerShell Remoting)
-- Script d’audit système avec journalisation personnalisée
+### 💻 TP :
+- Script qui parcourt un dossier et classe les fichiers par extension
+- Script de sauvegarde avec conditions sur la taille/date
+- Fonctions réutilisables avec gestion d’erreur
 
 ---
 
-## 🔹 **Administration système avec PowerShell (AD, Réseau, Azure, DevOps)**
+## 🔸 **PARTIE 3 – Gestion système locale : processus, services, utilisateurs, tâches**
 
-### 🧠 Contenu théorique :
-- PowerShell et Active Directory (module RSAT, gestion des utilisateurs/groupes/OU)
-- Requêtes LDAP et filtrage avancé
+### 🧠 Contenu :
+- Cmdlets pour les processus (`Get/Start/Stop-Process`)
+- Gestion des services Windows (`Get/Start/Stop/Restart-Service`)
+- Lecture/écriture dans le registre
+- Gestion d’utilisateurs et groupes locaux (`New-LocalUser`, `Add-LocalGroupMember`)
+- Tâches planifiées (`ScheduledTasks`, `schtasks.exe`)
+
+### 💻 TP :
+- Script de redémarrage automatique d’un processus critique
+- Audit de l’état des services avec export CSV
+- Création d’utilisateurs et attribution de droits locaux
+- Script de planification de maintenance quotidienne
+
+---
+
+## 🔸 **PARTIE 4 – Scripting avancé, sécurité et modules**
+
+### 🧠 Contenu :
+- Paramètres de script avec contraintes (`param`, `ValidateSet`, `Mandatory`)
+- Organisation modulaire (`.psm1`, `Export-ModuleMember`)
+- Signature de scripts (certificats, politiques d’exécution)
+- Gestion sécurisée des mots de passe (`SecureString`, `ConvertFrom-SecureString`)
+- Connexions distantes (`Invoke-Command`, `Enter-PSSession`)
+- Journalisation et logging personnalisé
+
+### 💻 TP :
+- Créer un module de fonctions métiers réutilisables
+- Signer et exécuter un script sécurisé
+- Créer un script d’audit avec logs et mots de passe chiffrés
+- Exécution d’un script sur une machine distante (simulée ou réelle)
+
+---
+
+## 🔸 **PARTIE 5 – Administration avancée : Active Directory, Réseau, Azure, DevOps**
+
+### 🧠 Contenu :
+- Gestion d’Active Directory (module RSAT)
+  - Utilisateurs, groupes, unités d’organisation
+  - Recherches LDAP, filtrage avec `Where-Object`
 - Cmdlets réseau (`Test-Connection`, `Resolve-DnsName`, `Get-NetTCPConnection`)
-- Introduction à PowerShell avec Azure (`Az` module)
-- Intégration avec DevOps : scripts de déploiement, templates
+- Introduction à Azure avec PowerShell (`Az` module)
+- Automatisation DevOps (déploiement, gestion de configuration, intégration CI/CD)
 
-### 💻 Travaux pratiques :
-- Script de nettoyage d’utilisateurs inactifs dans Active Directory
-- Script de test réseau complet (ping, DNS, ports, débit)
-- Simulation de déploiement d’une VM Azure (ou version locale simulée)
-- Génération automatique d’un dashboard HTML de monitoring système
+### 💻 TP :
+- Script d’audit AD : détecter les comptes inactifs
+- Script de test réseau complet (connectivité, ports, DNS)
+- Déploiement simulé de ressources Azure
+- Générer un tableau de bord HTML de monitoring système
 
 ---
 
-## 🔹 **Évaluation finale (optionnelle mais recommandée)**
+## 🔸 **PARTIE 6 – Projet final : Audit système automatisé**
 
-### 💡 Projet global :
-> **Créer un script d’audit automatique d’un poste ou serveur Windows incluant :**
-> - Informations système (RAM, CPU, disques)
-> - État des services critiques
-> - Liste des utilisateurs, groupes, tâches planifiées
-> - Rapport généré en HTML ou CSV avec timestamp
+### 💡 Objectif :
+Créer un **script complet d’audit de poste/serveur** avec :
+- Informations système : RAM, CPU, disques
+- Services critiques actifs
+- Comptes utilisateurs locaux ou AD
+- Liste des tâches planifiées
+- Résultat formaté (CSV, JSON ou HTML)
